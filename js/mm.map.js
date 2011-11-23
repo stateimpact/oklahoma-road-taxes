@@ -1,31 +1,26 @@
 var mm = com.modestmaps;
 
 var map = window.map || {};
-var CENTER = new mm.Location(40.302, -82.696);
-var DEFAULT_MAP = 'issue2';
+var CENTER = new mm.Location(34.957995,-97.097168);
+var DEFAULT_MAP = 'okroads';
 
 var baseurl = "http://api.tiles.mapbox.com/v2/";
 var base_layers = ['npr.USA-blank-trans-z11',
         'npr.world-blank-bright-0-10'];
 var layers = {
-	'issue2': {
-		slug: "npr.issue-2",
-		title: "2011: Issue 2"
+	'okroads': {
+		slug: "npr.ok-road-funds",
+		title: "Total Funds 2010"
     },
 
 	'election': {
-		slug: "npr.ohio-election-2010---kasich-vs-strickland",
-		title: "2010: Both Candidates"
+		slug: "npr.ok-population",
+		title: "Total Population"
     },
 
     'john-kasich': {
-        slug: "npr.ohio-election-map---john-kasich",
-        title: "2010: For John Kasich"
-    },
-    
-	'ted-strickland': {
-		slug: "npr.ohio-election-2010---ted-strickland",
-		title: "2010: For Ted Strickland"
+        slug: "npr.ok-per-capita-road-funds",
+        title: "Per-Person Road Funds"
     }
 };
 var top_layer = ['mapbox.world-borders-dark'];
