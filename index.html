@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+
+	<title>StateImpact Ohio | Ohio Issue 2 Election Map</title>
+
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<script src="http://stateimpact.npr.org/wp-content/themes/stateimpact-hub/js/modernizr-1.6.min.js"></script> 
+	<script type="text/javascript" src="http://use.typekit.com/yey2zgp.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link href='js/wax/theme/controls.css' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/map.css" type="text/css" media="screen">
+	<!-- Favicons
+	================================================== -->
+	<link rel="icon" href="http://stateimpact.npr.org/texas/wp-content/themes/statewatch/img/favicon.png"/>
+
+</head>
+<body>
+
+<header> 
+	<nav>
+		<h2><a href="http://stateimpact.npr.org">StateImpact</a></h2>
+		<h3><a href="/ohio/">Ohio</a></h3>
+	</nav>	
+	<h1 class="map-title">Comparing the 2010 Gubernatorial, 2011 Issue 2 Elections</h1>
+</header>
+
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- Delete everything in this .container and get started on your own site! -->
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+
+
+<footer>
+	<h3>A reporting project of local public media and <a class="nprlogo" href="http://npr.org" title="Visit npr.org">NPR</a></h3>
+	<ul class="sharing">
+	    <li><a href="#" class="embed">Embed</a></li>
+	    <li><a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-via="NPRStateImpact">Tweet</a></li>
+	    <li><div class="fb-like" data-width="150" data-layout="button_count" data-show-faces="false"></div></li>
+	</ul>
+</footer>
+
+<!-- Modal Overlays -->
+<div id='overlay'></div>
+<div id='modal-embed' class='modal'>
+  <div class='popup' id='popup-embed'>
+    <a href='#' class='icon close'>Close</a>
+    <div class='viewport'>
+      <div class='overview'>
+        <h2>Embed this map</h2>
+        <p>Copy and paste this code into any blog or web page to embed a view of the map:</p>
+        <div class='col'>
+          <div id='embed-code-field'>
+            <input type='text' length='30' value='' id='embed-code' readonly />
+          </div>
+          <p><em>Press <code>Ctrl+C</code> or <code>Command+C</code> to copy the embed code.</em></p>
+          <p>Some blogs or website CMSs filter certain HTML from your content. You may need to set your <code>format</code> or <code>input filter</code>  to <code>none</code> or <code>full HTML</code>.</p>
+          <p>Adjust the map's size by editing the 'width' and 'height' values in the code.</p>
+        </div>
+        <div class='col'>        
+          <div id='embed-ex-image'><img src='img/embed.png' alt='Example of a map embedded on a webpage' /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<!-- JS
+	================================================== -->
+	<script src="js/underscore-min.js"></script>
+	<script src="js/wax/ext/modestmaps.min.js"></script>
+	<script src="js/wax/dist/wax.mm.js"></script>
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="js/mm.map.js"></script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+	<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24211638-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript">
+    var _sf_async_config={uid:26060,domain:"stateimpact.npr.org"};
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+           (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+           "js/chartbeat.js");
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+    </script>
+<!-- End Document
+================================================== -->
+</body>
+</html>

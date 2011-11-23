@@ -1,0 +1,88 @@
+@water: #b8dee6;
+@land: #eee;
+@border: #85c5d3;
+@stateborder: #666;
+@countyborder: #fff;
+
+@scale1: #e6e6e6;
+@scale2: #c5e0e1;
+@scale3: #8BC0BF;
+@scale4: #51A09E;
+@scale5: #18817E;
+@scale6: #14615F;
+@scale7: #0D4140;
+
+#roads {
+  line-color: @countyborder;
+  line-width: 2;
+  line-join: round;
+
+  polygon-fill: @scale1;
+  polygon-opacity: 1;
+  
+  [PerCap > 0 ] { polygon-fill: @scale3; }
+  [PerCap > 75 ] { polygon-fill: @scale4; }
+  [PerCap > 150 ] { polygon-fill: @scale5; }
+  [PerCap > 350 ] { polygon-fill: @scale6; }
+  [PerCap > 700 ] { polygon-fill: @scale7; }
+  
+}
+
+#states [ISO="USA"] {
+ line-color: @stateborder;
+ line-width: 2;
+ line-join: round;
+ [zoom < 6] {
+  line-width: 1;    
+  }
+  [zoom > 7] {
+    line-width: 4;    
+  }
+}
+
+#lakes[ScaleRank < 4] {
+  line-color: @border;
+  polygon-fill: @water;
+}
+
+#countries {
+  ::outline {
+    line-color: #85c5d3;
+    line-width: 2;
+    line-join: round;
+  }
+  polygon-fill: #fff;
+}
+
+
+<p class="explainer">This map shows the amount of road funding, per person, in each county. Rural and sparsely populated areas receive more tax revenue per person than cities in many cases.</p>
+<h3>Per-Capita 2010</h3>
+<ul class="scale">
+  <li><span class="colorbox" style="background:#8BC0BF; color:#8BC0BF;">▉</span> < $75</li>
+  <li><span class="colorbox" style="background:#51A09E; color:#51A09E;">▉</span> $75-150</li>
+  <li><span class="colorbox" style="background:#18817E; color:#18817E;">▉</span> $150-$350</li>
+  <li><span class="colorbox" style="background:#14615F; color:#14615F;">▉</span> $350-$700</li>
+  <li><span class="colorbox" style="background:#0D4140; color:#0D4140;">▉</span> > $700</li>
+</ul>
+<p class="source">Sources: <a target="_blank" href="http://www.census.gov">U.S. Census Bureau</a>, <a target="_blank" href="http://www.tax.ok.gov/">Oklahoma Tax Commission</a></p>
+<em><p class="source"> — <a href="mailto:mstiles@npr.org">Matt Stiles</a> & <a href="mailto:mstiles@npr.org">Joe Wertz</a></p></em>
+
+==
+
+[Fuels] [Production] [Vehicle] [Total] [DFuels] [DProductio] [DVehicle] [DTotal] [DCounty] [Pop] [DPop] [PerCap] [DPerCap]
+
+<h4 class="county">[DCounty] 2010</h4>
+<table>
+  <tr>
+	<td class="label">Total Road Funds:</td>
+	<td class="num int">[DTotal]</td>
+  </tr>
+  <tr>
+	<td class="label">Total Population:</td>
+	<td class="num int">[DPop]</td>
+  </tr>
+  <tr>
+	<td class="label">Per-Person Amount:</td>
+	<td class="num float">[DPerCap]</td>
+  </tr>
+</table>

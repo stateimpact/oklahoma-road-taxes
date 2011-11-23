@@ -1,0 +1,87 @@
+@water: #b8dee6;
+@land: #eee;
+@border: #85c5d3;
+@stateborder: #666;
+@countyborder: #fff;
+
+@scale1: #e6e6e6;
+@scale2: #c5e0e1;
+@scale3: #8BC0BF;
+@scale4: #51A09E;
+@scale5: #18817E;
+@scale6: #14615F;
+@scale7: #0D4140;
+
+#roads {
+  line-color: @countyborder;
+  line-width: 2;
+  line-join: round;
+
+  polygon-fill: @scale1;
+  polygon-opacity: 1;
+  
+  [Total > 0 ] { polygon-fill: @scale3; }
+  [Total > 2000000 ] { polygon-fill: @scale4; }
+  [Total > 3000000 ] { polygon-fill: @scale5; }
+  [Total > 5000000 ] { polygon-fill: @scale6; }
+  [Total > 6500000 ] { polygon-fill: @scale7; }
+  
+}
+
+#states [ISO="USA"] {
+ line-color: @stateborder;
+ line-width: 2;
+ line-join: round;
+ [zoom < 6] {
+  line-width: 1;    
+  }
+  [zoom > 7] {
+    line-width: 4;    
+  }
+}
+
+#lakes[ScaleRank < 4] {
+  line-color: @border;
+  polygon-fill: @water;
+}
+
+#countries {
+  ::outline {
+    line-color: #85c5d3;
+    line-width: 2;
+    line-join: round;
+  }
+  polygon-fill: #fff;
+}
+
+==
+
+<p class="explainer">State fuel, motor vehicle and gross production taxes fund road construction and maintenance in all 77 counties, but are these funds distributed evenly? Toggle between the maps to compare the total collected by county and its corresponding per-capita total. 
+</p>
+
+[Total > 0 ] { polygon-fill: @scale3; }
+[Total > 2000000 ] { polygon-fill: @scale4; }
+[Total > 3000000 ] { polygon-fill: @scale5; }
+[Total > 5000000 ] { polygon-fill: @scale6; }
+[Total > 6500000 ] { polygon-fill: @scale7; }
+
+==
+
+@scale2: #fcc99c;
+@scale3: #fcac64;
+@scale4: #FD8D3C;
+@scale5: #E6550D;
+@scale6: #A63603;
+
+<p class="explainer">State fuel, motor vehicle and gross production taxes fund road construction and maintenance in all 77 counties, but are these funds distributed evenly? Toggle between the maps to compare the total collected by county and its corresponding per-capita total. 
+</p>
+<h3>Total Funds 2010</h3>
+<ul class="scale">
+  <li><span class="colorbox" style="background:#8BC0BF; color:#8BC0BF;">▉</span> < $20 Million</li>
+  <li><span class="colorbox" style="background:#51A09E; color:#51A09E;">▉</span> $20-30 Million</li>
+  <li><span class="colorbox" style="background:#18817E; color:#18817E;">▉</span> $30-50 Million</li>
+  <li><span class="colorbox" style="background:#14615F; color:#14615F;">▉</span> $50-65 Million</li>
+  <li><span class="colorbox" style="background:#0D4140; color:#0D4140;">▉</span> > %65 Million</li>
+</ul>
+<p class="source">Sources: <a target="_blank" href="http://www.census.gov">U.S. Census Bureau</a>, <a target="_blank" href="http://www.tax.ok.gov/">Oklahoma Tax Commission</a></p>
+<em><p class="source"> — <a href="mailto:mstiles@npr.org">Matt Stiles</a> & <a href="mailto:mstiles@npr.org">Joe Wertz</a></p></em>
